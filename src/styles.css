@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'aos/dist/aos.css';
+@import 'tailwindcss';
+/* ==========================================
+   ANIMACIONES PARA EL SPLASH SCREEN
+   ========================================== */
+
+/* 1. Desvanecer el fondo negro */
+@keyframes desaparecer-splash {
+  0% { opacity: 1; visibility: visible; }
+  80% { opacity: 1; visibility: visible; } /* Se queda fijo el 80% del tiempo */
+  100% { opacity: 0; visibility: hidden; } /* Se desvanece al final */
+}
+
+.pantalla-carga {
+  animation: desaparecer-splash 2.5s ease-in-out forwards;
+}
+
+/* 2. Efecto de latido (zoom) para el logo */
+@keyframes latido-logo {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.logo-latido {
+  animation: latido-logo 1s ease-in-out infinite;
+}
+@keyframes cargar-barra {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+/* Limpia cualquier desborde horizontal que cause barras fantasma */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #09090b;
+}
+
+/* Personaliza la barra de desplazamiento para que combine con el diseño oscuro */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626; /* Se pone rojo Performance al pasar el mouse */
+}

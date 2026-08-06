@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PerformanceRozrz</title>
+  
+  <!-- FAVICON (LOGO EN LA PESTAÑA DEL NAVEGADOR) -->
+  <link rel="icon" type="image/png" href="logoo.png">
+
+  <!-- META TAGS PARA COMPARTIR EN WHATSAPP Y FACEBOOK -->
+  <meta property="og:title" content="PerformanceRozRz | Mecánica Especializada y Estética Automotriz">
+  <meta property="og:description" content="Potencia, precisión y alto rendimiento. Hojalatería, pintura premium, mecánica diésel, gasolina y clínica de motos. ¡Cotiza tu servicio hoy!">
+  <meta property="og:image" content="https://admineros2.web.app/logoo.png">
+  <meta property="og:url" content="https://admineros2.web.app">
+  <meta property="og:type" content="website">
+
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SCRIPT PARA FORZAR EL SCROLL HASTA ARRIBA AL RECARGAR -->
+  <script>
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+    window.onload = function() {
+      window.scrollTo(0,0);
+    };
+  </script>
+
+  <!-- ESTILOS DE LA PANTALLA DE CARGA (Súper ligeros) -->
+  <style>
+    body { margin: 0; background-color: #09090b; } /* Fondo oscuro */
+    .splash-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #09090b;
+    }
+    .splash-logo {
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 30px;
+      animation: latido 2s infinite ease-in-out;
+    }
+    .loading-bar-container {
+      width: 200px;
+      height: 4px;
+      background-color: #27272a; 
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .loading-bar {
+      width: 50%;
+      height: 100%;
+      background-color: #dc2626; /* Rojo Performance */
+      animation: barrido 1.5s infinite ease-in-out;
+    }
+    @keyframes latido {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+    }
+    @keyframes barrido {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+  </style>
+</head>
+<body>
+  
+  <app-root>
+    <!-- ESTO SE MUESTRA INSTANTÁNEAMENTE MIENTRAS ANGULAR DESCARGA -->
+    <div class="splash-container">
+      <img src="/logoo.png" alt="Cargando PerformanceRozRz..." class="splash-logo">
+      <div class="loading-bar-container">
+        <div class="loading-bar"></div>
+      </div>
+    </div>
+  </app-root>
+
+</body>
+</html>
