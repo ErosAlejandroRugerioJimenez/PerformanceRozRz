@@ -21,12 +21,13 @@ export class App implements OnInit {
   title = 'performance-rozrz';
 
   ngOnInit() {
+    window.history.replaceState({}, document.title, window.location.pathname);
     AOS.init({
-      duration: 800,           // Más tiempo para un efecto premium y suave
-      once: true,              // ¡Clave! Solo anima la primera vez que bajas para no marear ni trabar el celular
-      offset: 100,             // Dispara 100px antes de que aparezca (está perfecto)
-      easing: 'ease-in-out',   // Aceleración y desaceleración fluida
-      mirror: false            // Evita efectos raros al hacer scroll hacia arriba
+      duration: 400,           // REDUCIDO: 400ms es el punto dulce. Se ve premium pero termina rápido, liberando memoria.
+      once: true,              // ¡Perfecto que lo tengas así!
+      offset: 50,              // REDUCIDO: Al bajar a 50px, la orden de animar se dispara antes y evita cuellos de botella.
+      easing: 'ease-out-cubic',// MODIFICADO: Esta curva matemática es más "barata" de procesar para la computadora que ease-in-out.
+      mirror: false            // Excelente.
     });
   }
 }

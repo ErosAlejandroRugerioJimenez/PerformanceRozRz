@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- TÍTULO DE LA SECCIÓN -->
-    <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+    <div class="text-center mb-12 md:mb-16" data-aos="fade-down">
       <h2 class="text-xs font-bold text-red-600 tracking-widest uppercase mb-2">Portafolio</h2>
       <h3 class="text-3xl sm:text-4xl font-black text-white italic tracking-tight">
         GALERÍA <span class="text-red-600">GENERAL</span>
@@ -14,8 +14,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- FOTO 1: Laptop / Diagnóstico Eléctrico -->
-      <div data-aos="fade-up" data-aos-delay="100" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
-        <img src="/11.jpeg" alt="Diagnóstico Eléctrico" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      <div data-aos="fade-up" data-aos-delay="50" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
+        <img src="/11.jpeg" alt="Diagnóstico Eléctrico" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
         <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end z-10 pointer-events-none bg-gradient-to-t from-zinc-950/90 to-transparent pt-6 pb-2 px-2">
           <span class="text-white font-bold text-base md:text-lg tracking-wide">Diagnóstico Eléctrico</span>
           <span class="bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Sistema</span>
@@ -23,8 +23,8 @@
       </div>
 
       <!-- FOTO 2: Echando aceite de motor -->
-      <div data-aos="fade-up" data-aos-delay="200" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
-        <img src="/22.jpeg" alt="Mecánica Especializada" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      <div data-aos="fade-up" data-aos-delay="100" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
+        <img src="/22.jpeg" alt="Mecánica Especializada" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
         <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end z-10 pointer-events-none bg-gradient-to-t from-zinc-950/90 to-transparent pt-6 pb-2 px-2">
           <span class="text-white font-bold text-base md:text-lg tracking-wide">Mecánica Especializada</span>
           <span class="bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Motor</span>
@@ -32,9 +32,9 @@
       </div>
 
       <!-- VIDEO: Proceso en Vivo -->
-      <div data-aos="fade-up" data-aos-delay="300" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg cursor-pointer flex items-center justify-center">
-        <div class="w-full h-full flex items-center justify-center">
-          <video #vidGaleria preload="none" class="w-full h-full object-contain" (click)="vidGaleria.paused ? vidGaleria.play() : vidGaleria.pause()">
+      <div data-aos="fade-up" data-aos-delay="150" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg cursor-pointer flex items-center justify-center">
+        <div class="w-full h-full flex items-center justify-center w-full">
+          <video #vidGaleria preload="metadata" class="w-full h-full object-contain" (click)="vidGaleria.paused ? vidGaleria.play() : vidGaleria.pause()">
             <source src="/55.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
           </video>
@@ -55,8 +55,8 @@
       </div>
 
       <!-- FOTO 4: Camioneta blanca con sensores -->
-      <div data-aos="fade-up" data-aos-delay="100" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
-        <img src="/33.jpeg" alt="Afinación y Sensores" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      <div data-aos="fade-up" data-aos-delay="200" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
+        <img src="/33.jpeg" alt="Afinación y Sensores" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
         <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end z-10 pointer-events-none bg-gradient-to-t from-zinc-950/90 to-transparent pt-6 pb-2 px-2">
           <span class="text-white font-bold text-base md:text-lg tracking-wide">Afinación y Sensores</span>
           <span class="bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Mecánica</span>
@@ -64,8 +64,8 @@
       </div>
 
       <!-- FOTO 5: Volante / Interior Ford -->
-      <div data-aos="fade-up" data-aos-delay="200" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
-        <img src="/44.jpeg" alt="Interior y Electrónica" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      <div data-aos="fade-up" data-aos-delay="250" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
+        <img src="/44.jpeg" alt="Interior y Electrónica" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
         <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end z-10 pointer-events-none bg-gradient-to-t from-zinc-950/90 to-transparent pt-6 pb-2 px-2">
           <span class="text-white font-bold text-base md:text-lg tracking-wide">Interior y Electrónica</span>
           <span class="bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Cabina</span>
@@ -74,7 +74,7 @@
 
       <!-- FOTO 6: Moto Vento -->
       <div data-aos="fade-up" data-aos-delay="300" class="group relative aspect-[9/16] rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black shadow-lg flex items-center justify-center">
-        <img src="/66.jpeg" alt="Clínica de Motos" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+        <img src="/66.jpeg" alt="Clínica de Motos" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
         <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end z-10 pointer-events-none bg-gradient-to-t from-zinc-950/90 to-transparent pt-6 pb-2 px-2">
           <span class="text-white font-bold text-base md:text-lg tracking-wide">Clínica de Motos</span>
           <span class="bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Motos</span>

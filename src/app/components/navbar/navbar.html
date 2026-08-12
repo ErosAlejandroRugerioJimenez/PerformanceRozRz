@@ -6,20 +6,20 @@
     <div class="flex items-center justify-between h-20">
       
       <!-- Logo a la izquierda -->
-      <div class="flex-shrink-0 cursor-pointer">
+      <div class="flex-shrink-0 cursor-pointer" (click)="scrollToSection('inicio')">
         <img src="/logoo.png" alt="Logo performanceRozRz" class="h-10 md:h-14 w-auto object-contain transition-transform hover:scale-105 duration-300">
       </div>
 
       <!-- Menú de Enlaces (Solo Desktop) -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4 lg:space-x-6">
-          <a href="#" class="text-red-500 font-bold px-3 py-2 text-sm uppercase tracking-wider">Inicio</a>
-          <a href="#servicios" class="text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Servicios</a>
-          <a href="#galeria" class="text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Galería</a>
-          <a href="#galeria-general" class="text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Galeria General</a>
-          <a href="#testimonios" class="text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Testimonios</a>
-          <a href="#faq" class="text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">FAQ</a>
-          <a href="#contacto" class="text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Contacto</a>
+          <a (click)="scrollToSection('inicio')" class="cursor-pointer text-red-500 font-bold px-3 py-2 text-sm uppercase tracking-wider">Inicio</a>
+          <a (click)="scrollToSection('servicios')" class="cursor-pointer text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Servicios</a>
+          <a (click)="scrollToSection('galeria')" class="cursor-pointer text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Galería</a>
+          <a (click)="scrollToSection('galeria-general')" class="cursor-pointer text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Galeria General</a>
+          <a (click)="scrollToSection('testimonios')" class="cursor-pointer text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Testimonios</a>
+          <a (click)="scrollToSection('faq')" class="cursor-pointer text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">FAQ</a>
+          <a (click)="scrollToSection('contacto')" class="cursor-pointer text-zinc-300 hover:text-red-500 px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors">Contacto</a>
         </div>
       </div>
 
@@ -55,14 +55,13 @@
   <!-- EL MENÚ DESPLEGABLE (CELULAR) -->
   <div [class.hidden]="!isMenuOpen" class="md:hidden bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800 shadow-2xl absolute w-full left-0">
     <div class="px-4 pt-2 pb-6 space-y-2">
-      <a href="#" (click)="toggleMenu()" class="block text-red-500 font-bold px-3 py-4 text-base uppercase tracking-wider border-b border-zinc-800/50">Inicio</a>
-      <a href="#servicios" (click)="toggleMenu()" class="block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Servicios</a>
-      <a href="#galeria" (click)="toggleMenu()" class="block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Galería</a>
-      <a href="#testimonios" (click)="toggleMenu()" class="block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Testimonios</a>
-      <a href="#faq" (click)="toggleMenu()" class="block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">FAQ</a>
-      <a href="#contacto" (click)="toggleMenu()" class="block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Contacto</a>
-      <a href="#galeria-general" (click)="toggleMenu()" class="block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Galería General</a>
-
+      <a (click)="scrollToSection('inicio'); toggleMenu()" class="cursor-pointer block text-red-500 font-bold px-3 py-4 text-base uppercase tracking-wider border-b border-zinc-800/50">Inicio</a>
+      <a (click)="scrollToSection('servicios'); toggleMenu()" class="cursor-pointer block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Servicios</a>
+      <a (click)="scrollToSection('galeria'); toggleMenu()" class="cursor-pointer block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Galería</a>
+      <a (click)="scrollToSection('galeria-general'); toggleMenu()" class="cursor-pointer block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Galería General</a>
+      <a (click)="scrollToSection('testimonios'); toggleMenu()" class="cursor-pointer block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Testimonios</a>
+      <a (click)="scrollToSection('faq'); toggleMenu()" class="cursor-pointer block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">FAQ</a>
+      <a (click)="scrollToSection('contacto'); toggleMenu()" class="cursor-pointer block text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-md px-3 py-4 text-base font-medium uppercase tracking-wider transition-colors">Contacto</a>
       
       <!-- Botón de WhatsApp para celular -->
       <div class="mt-6 pt-6 border-t border-zinc-800">
