@@ -10,9 +10,32 @@ import GaleriaGeneral from "./components/GaleriaGeneral";
 import Contacto from "./components/Contacto";
 import Testimonios from "./components/Testimonios";
 import Faq from "./components/Faq";
+import Footer from "./components/Footer";
 import QuoteLink from "./components/QuoteLink";
 
 export default function App() {
+  useEffect(() => {
+    const loader = document.getElementById("site-loader");
+    if (!loader) return;
+
+    let removalTimer;
+    let disposed = false;
+    const dismiss = () => {
+      if (disposed || loader.hasAttribute("data-ready")) return;
+      loader.setAttribute("data-ready", "");
+      loader.setAttribute("aria-hidden", "true");
+      removalTimer = window.setTimeout(() => loader.remove(), 220);
+    };
+
+    const poster = new Image();
+    poster.src = "/previews/mecanica.webp";
+    poster.decode().then(dismiss, dismiss);
+    return () => {
+      disposed = true;
+      window.clearTimeout(removalTimer);
+    };
+  }, []);
+
   useEffect(() => {
     AOS.init({ duration: 400, once: true, offset: 45, disableMutationObserver: true });
     if (window.location.hash) {
@@ -36,10 +59,7 @@ export default function App() {
         <GaleriaGeneral />
         <Faq />
       </main>
-      <footer className="border-t border-zinc-800 px-5 py-7 text-center text-sm text-zinc-400">
-        <p>PerformanceRozRz · San Francisco Tetlanohcan, Tlaxcala</p>
-        <p className="mt-2 text-xs">© 2026 Biglat Technologies</p>
-      </footer>
+      <Footer />
       <QuoteLink className="floating-quote" aria-label="Cotizar por WhatsApp">
         <MessageCircle size={20} aria-hidden="true" />
         <span>WhatsApp</span>

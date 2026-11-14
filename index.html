@@ -20,9 +20,38 @@
     <meta property="og:image" content="https://admineros2.web.app/logoo.png" />
     <meta property="og:url" content="https://admineros2.web.app" />
     <meta property="og:type" content="website" />
+    <link rel="preload" as="image" href="/previews/mecanica.webp" />
+    <style>
+      body { margin: 0; background: #09090b; }
+      #site-loader {
+        position: fixed; inset: 0; z-index: 999;
+        display: grid; align-content: center; justify-items: center; gap: 1.5rem;
+        background: #09090b; color: white; transition: opacity 220ms ease;
+      }
+      #site-loader[data-ready] { opacity: 0; pointer-events: none; }
+      #site-loader img { width: min(13rem, 60vw); height: 7rem; object-fit: contain; }
+      .loader-track { width: 10rem; height: 4px; border-radius: 99px; overflow: hidden; background: #27272a; }
+      .loader-track::after {
+        content: ""; display: block; width: 45%; height: 100%; border-radius: inherit;
+        background: #fb923c; animation: loader-sweep 1.15s ease-in-out infinite alternate;
+      }
+      @keyframes loader-sweep { to { transform: translateX(122%); } }
+      @media (prefers-reduced-motion: reduce) {
+        #site-loader { transition: none; }
+        .loader-track::after { animation: none; }
+      }
+    </style>
   </head>
   <body>
+    <noscript><style>#site-loader { display: none; }</style>Activa JavaScript para ver el sitio.</noscript>
+    <div id="site-loader" role="status" aria-label="Cargando PerformanceRozRz">
+      <img src="/logoo.png" alt="PerformanceRozRz" fetchpriority="high" />
+      <span class="loader-track" aria-hidden="true"></span>
+    </div>
     <div id="root"></div>
+    <script>
+      window.setTimeout(() => document.getElementById("site-loader")?.remove(), 4500);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
