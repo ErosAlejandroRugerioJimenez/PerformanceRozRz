@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/performance-rozrz/browser",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
