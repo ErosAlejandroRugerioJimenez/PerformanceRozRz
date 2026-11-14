@@ -1,5 +1,5 @@
 import {
-  Camera, ChevronRight, CircleHelp, Images, MapPin, Menu, MessageCircle,
+  Camera, CircleHelp, Images, MapPin, Menu, MessageCircle,
   Star, Wrench, X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -74,19 +74,10 @@ export default function Navbar() {
     }
   }
 
-  function navigate(event) {
-    setOpen(false);
-    const target = document.getElementById(event.currentTarget.hash.slice(1));
-    if (target && document.activeElement === event.currentTarget) {
-      if (!target.hasAttribute("tabindex")) target.tabIndex = -1;
-      target.focus({ preventScroll: true });
-    }
-  }
-
   return (
     <header ref={header} className="site-header" onKeyDown={handleKeyDown}>
       <div className="header-row">
-        <a href="#inicio" onClick={navigate} className="header-brand" aria-label="PerformanceRozRz, inicio">
+        <a href="#inicio" onClick={() => setOpen(false)} className="header-brand" aria-label="PerformanceRozRz, inicio">
           <img src="/logoo.png" alt="" className="h-9 w-auto max-w-full object-contain sm:h-10" />
         </a>
 
@@ -106,7 +97,7 @@ export default function Navbar() {
           <button
             ref={toggle}
             type="button"
-            className="header-toggle lg:hidden"
+            className="header-toggle inline-grid place-items-center lg:hidden"
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -118,13 +109,12 @@ export default function Navbar() {
       </div>
 
       <nav id="mobile-nav" aria-label="Navegación móvil" hidden={!open} className="mobile-nav lg:hidden">
-        <ul className="grid gap-1 sm:grid-cols-2">
+        <ul className="grid grid-cols-2 gap-2">
           {links.map(({ id, label, icon: Icon }) => (
             <li key={id}>
-              <a href={`#${id}`} onClick={navigate} aria-current={active === id ? "location" : undefined}>
+              <a href={`#${id}`} onClick={() => setOpen(false)} aria-current={active === id ? "location" : undefined}>
                 <Icon size={19} aria-hidden="true" />
-                {label}
-                <ChevronRight size={17} aria-hidden="true" className="ml-auto opacity-60" />
+                <span>{label}</span>
               </a>
             </li>
           ))}

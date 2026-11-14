@@ -102,11 +102,18 @@ main:focus {
   color: #fafafa;
 }
 .header-toggle:hover { background: #27272a; }
+.header-toggle[aria-expanded="true"] {
+  background: #431e12;
+  border-color: #fb923c;
+  color: #fed7aa;
+}
 .mobile-nav {
   position: absolute;
   inset-inline: clamp(0.5rem, 3vw, 1.5rem);
   top: calc(100% + 0.5rem);
-  padding: 0.5rem;
+  padding: 0.65rem;
+  max-width: 30rem;
+  margin-inline: auto;
   max-height: calc(100dvh - var(--header-height) - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 1rem);
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -118,11 +125,15 @@ main:focus {
 .mobile-nav a {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  min-height: 48px;
-  padding: 0.6rem 0.8rem;
+  gap: 0.5rem;
+  min-height: 52px;
+  height: 100%;
+  padding: 0.55rem 0.65rem;
+  background: #222225;
+  font-size: 0.875rem;
+  line-height: 1.25;
 }
-.mobile-nav a svg:first-child { color: #fb923c; }
+.mobile-nav a svg:first-child { color: #fb923c; flex-shrink: 0; }
 @media (width < 64rem) {
   .floating-quote { display: none !important; }
 }
@@ -258,9 +269,6 @@ main:focus {
 }
 .floating-quote:hover {
   background: #14532d;
-}
-footer {
-  padding-bottom: 5rem !important;
 }
 [data-aos]:focus-within {
   opacity: 1 !important;

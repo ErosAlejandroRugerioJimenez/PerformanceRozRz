@@ -38,9 +38,28 @@ export default function App() {
 
   useEffect(() => {
     AOS.init({ duration: 400, once: true, offset: 45, disableMutationObserver: true });
-    if (window.location.hash) {
-      document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
+    const initialSection = document.getElementById(window.location.hash.slice(1));
+    if (initialSection) {
+      initialSection.scrollIntoView();
+      window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search);
     }
+
+    function scrollToSection(event) {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
+          event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target.closest?.('a[href^="#"]');
+      const section = link && document.getElementById(link.hash.slice(1));
+      if (!section) return;
+      event.preventDefault();
+      if (document.activeElement === link) {
+        if (!section.hasAttribute("tabindex")) section.tabIndex = -1;
+        section.focus({ preventScroll: true });
+      }
+      section.scrollIntoView();
+    }
+
+    document.addEventListener("click", scrollToSection);
+    return () => document.removeEventListener("click", scrollToSection);
   }, []);
 
   return (
