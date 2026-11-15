@@ -13,6 +13,8 @@ export default function QuoteLink({ service, children, ...props }) {
     <a
       {...props}
       href={quoteUrl(service)}
+      data-umami-event="cotizar_whatsapp"
+      data-umami-event-servicio={service ?? "general"}
       target="_blank"
       rel="noopener noreferrer"
     >
