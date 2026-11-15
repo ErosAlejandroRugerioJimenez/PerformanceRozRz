@@ -197,12 +197,6 @@ main:focus {
   margin: auto;
   padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 6vw, 5rem);
 }
-.service-section h2 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 900;
-  letter-spacing: -0.035em;
-  margin-bottom: 1.4rem;
-}
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));

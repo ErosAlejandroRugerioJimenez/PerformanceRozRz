@@ -39,7 +39,12 @@ const services = [
 export default function Servicios() {
   return (
     <section id="servicios" className="service-section">
-      <h2>Servicios del taller</h2>
+      <div className="mb-10 text-center">
+        <h2 className="mb-4 text-3xl font-black tracking-tight text-white italic sm:text-4xl md:text-5xl">
+          SERVICIOS DEL <span className="text-orange-400">TALLER</span>
+        </h2>
+        <div className="mx-auto h-1 w-20 rounded-full bg-orange-600 md:w-24" />
+      </div>
       <div className="service-grid">
         {services.map(({ title, description, image, quote, icon: Icon }) => (
           <article key={title} className="service-card">
