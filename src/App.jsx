@@ -15,28 +15,6 @@ import QuoteLink from "./components/QuoteLink";
 
 export default function App() {
   useEffect(() => {
-    const loader = document.getElementById("site-loader");
-    if (!loader) return;
-
-    let removalTimer;
-    let disposed = false;
-    const dismiss = () => {
-      if (disposed || loader.hasAttribute("data-ready")) return;
-      loader.setAttribute("data-ready", "");
-      loader.setAttribute("aria-hidden", "true");
-      removalTimer = window.setTimeout(() => loader.remove(), 220);
-    };
-
-    const poster = new Image();
-    poster.src = "/previews/mecanica.webp";
-    poster.decode().then(dismiss, dismiss);
-    return () => {
-      disposed = true;
-      window.clearTimeout(removalTimer);
-    };
-  }, []);
-
-  useEffect(() => {
     AOS.init({ duration: 400, once: true, offset: 45, disableMutationObserver: true });
     const initialSection = document.getElementById(window.location.hash.slice(1));
     if (initialSection) {

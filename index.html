@@ -57,7 +57,13 @@
     </div>
     <div id="root"></div>
     <script>
-      window.setTimeout(() => document.getElementById("site-loader")?.remove(), 4500);
+      window.setTimeout(() => {
+        const loader = document.getElementById("site-loader");
+        if (!loader) return;
+        loader.setAttribute("data-ready", "");
+        loader.setAttribute("aria-hidden", "true");
+        window.setTimeout(() => loader.remove(), 220);
+      }, 2000);
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>

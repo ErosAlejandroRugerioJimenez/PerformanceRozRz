@@ -4,7 +4,7 @@ export function quoteUrl(service) {
   const request = service
     ? `me gustaría cotizar ${service}.`
     : "me gustaría cotizar un servicio para mi vehículo.";
-  const message = `¡Hola, PerformanceRozRz! Vi tu página oficial y ${request}`;
+  const message = `¡Hola, PerformanceRozRz! Vi tu página web y ${request}`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
