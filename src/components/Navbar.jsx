@@ -109,7 +109,7 @@ export default function Navbar() {
       </div>
 
       <nav id="mobile-nav" aria-label="Navegación móvil" hidden={!open} className="mobile-nav lg:hidden">
-        <ul className="grid grid-cols-2 gap-2">
+        <ul className="divide-y divide-white/10">
           {links.map(({ id, label, icon: Icon }) => (
             <li key={id}>
               <a href={`#${id}`} onClick={() => setOpen(false)} aria-current={active === id ? "location" : undefined}>
